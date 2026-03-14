@@ -1,0 +1,110 @@
+﻿@import "../styles/tokens.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100dvh;
+  font-family: Inter, "SF Pro Display", "SF Pro Text", ui-sans-serif, system-ui, sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  background-image: var(--background-image);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: rgba(236, 86, 56, 0.24);
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-55%);
+  }
+  100% {
+    transform: translateX(155%);
+  }
+}
+
+@keyframes breathe-glow {
+  0%,
+  100% {
+    opacity: 0.78;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+.safe-px {
+  padding-left: max(1rem, env(safe-area-inset-left));
+  padding-right: max(1rem, env(safe-area-inset-right));
+}
+
+.safe-pb {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+}
+
+.nav-safe-space {
+  padding-bottom: calc(8.25rem + env(safe-area-inset-bottom));
+}
+
+.page-shell {
+  @apply mx-auto flex min-h-screen w-full max-w-md flex-col;
+}
+
+.glass-surface {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(249, 250, 251, 0.82));
+  border: 1px solid var(--glass-border);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 18px 42px rgba(17, 24, 39, 0.08);
+  backdrop-filter: blur(24px);
+}
+
+.dark .glass-surface {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.035));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 18px 42px rgba(0, 0, 0, 0.24);
+}
+
+.gold-glow {
+  filter: drop-shadow(0 0 10px rgba(200, 167, 91, 0.38)) drop-shadow(0 0 18px rgba(200, 167, 91, 0.18));
+}
+
+.premium-outline {
+  box-shadow: 0 0 0 1px rgba(200, 167, 91, 0.08), 0 18px 38px rgba(17, 24, 39, 0.1);
+}
+
+.dark .premium-outline {
+  box-shadow: 0 0 0 1px rgba(200, 167, 91, 0.14), 0 22px 48px rgba(0, 0, 0, 0.34);
+}
+
+.surface-divider {
+  border-color: rgba(229, 231, 235, 0.95);
+}
+
+.dark .surface-divider {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

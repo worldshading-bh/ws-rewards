@@ -1,0 +1,23 @@
+﻿:root {
+  --background: #ffffff;
+  --foreground: #1f2937;
+  --muted: #6b7280;
+  --surface: rgba(255, 255, 255, 0.94);
+  --surface-strong: rgba(255, 255, 255, 1);
+  --border: #e5e7eb;
+  --glass: rgba(255, 255, 255, 0.78);
+  --glass-border: rgba(229, 231, 235, 0.9);
+  --background-image: radial-gradient(circle at top, rgba(236, 86, 56, 0.1), transparent 30%), radial-gradient(circle at 18% 10%, rgba(200, 167, 91, 0.08), transparent 22%), linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+}
+
+.dark {
+  --background: #0f0f0f;
+  --foreground: #f9fafb;
+  --muted: #a1a1aa;
+  --surface: rgba(24, 24, 24, 0.88);
+  --surface-strong: rgba(24, 24, 24, 0.96);
+  --border: rgba(255, 255, 255, 0.08);
+  --glass: rgba(255, 255, 255, 0.055);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --background-image: radial-gradient(circle at top, rgba(212, 87, 47, 0.2), transparent 30%), radial-gradient(circle at 20% 12%, rgba(200, 167, 91, 0.12), transparent 24%), linear-gradient(180deg, #0f0f0f 0%, #16110f 46%, #231612 100%);
+}

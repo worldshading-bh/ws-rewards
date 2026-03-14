@@ -1,0 +1,7 @@
+.next/
+node_modules/
+.npm-cache/
+out/
+public/sw.js
+public/workbox-*.js
+*.log

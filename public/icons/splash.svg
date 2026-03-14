@@ -1,0 +1,15 @@
+<svg width="512" height="1024" viewBox="0 0 512 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="1024" fill="#121212"/>
+  <circle cx="256" cy="250" r="180" fill="#EC5638" fill-opacity="0.12"/>
+  <rect x="116" y="366" width="280" height="280" rx="80" fill="url(#paint0_linear_1_2)"/>
+  <path d="M172 463L212 566L256 491L300 566L340 463" stroke="white" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M188 590H324" stroke="#C8A75B" stroke-width="14" stroke-linecap="round"/>
+  <text x="256" y="720" fill="#F9FAFB" font-family="Inter, Arial, sans-serif" font-size="38" text-anchor="middle">WS Rewards</text>
+  <defs>
+    <linearGradient id="paint0_linear_1_2" x1="132" y1="380" x2="370" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C8A75B"/>
+      <stop offset="0.45" stop-color="#EC5638"/>
+      <stop offset="1" stop-color="#121212"/>
+    </linearGradient>
+  </defs>
+</svg>
