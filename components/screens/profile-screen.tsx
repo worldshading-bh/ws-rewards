@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { ChevronRight, LogOut, MoonStar, ShieldCheck, Smartphone } from "lucide-react";
+import { ChevronRight, LogOut, ShieldCheck, Smartphone } from "lucide-react";
 import { GlassCard } from "@/components/ui/glass-card";
 import { StarRating } from "@/components/ui/star-rating";
 import { CustomerOverview } from "@/types/customer";
@@ -48,8 +48,7 @@ export function ProfileScreen({ data }: { data: CustomerOverview }) {
 
       {[
         { icon: Smartphone, title: "Install on home screen", detail: "Fast access with native app feel" },
-        { icon: MoonStar, title: "Dark luxury theme", detail: "Optimized for low-light premium browsing" },
-        { icon: ShieldCheck, title: "ERPNext connected architecture", detail: "Calculations and membership logic remain in the backend" }
+        { icon: ShieldCheck, title: "Secure sign-in", detail: "Your membership access is protected on this device" }
       ].map((item) => (
         <GlassCard key={item.title} className="flex items-center justify-between rounded-[1.75rem] p-4">
           <div className="flex items-center gap-3">

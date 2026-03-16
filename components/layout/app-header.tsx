@@ -1,5 +1,6 @@
 ﻿"use client";
 
+import Image from "next/image";
 import { Bell, MoonStar, SunMedium } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useMounted } from "@/hooks/use-mounted";
@@ -10,14 +11,16 @@ type AppHeaderProps = {
   subtitle: string;
 };
 
-export function AppHeader({ eyebrow, title, subtitle }: AppHeaderProps) {
+export function AppHeader({ eyebrow: _eyebrow, title, subtitle }: AppHeaderProps) {
   const { setTheme, theme } = useTheme();
   const mounted = useMounted();
 
   return (
     <header className="flex items-start justify-between gap-4">
-      <div className="space-y-2">
-        <p className="text-xs uppercase tracking-[0.32em] text-gold">{eyebrow}</p>
+      <div className="space-y-3">
+        <div className="flex items-center">
+          <Image src="/icons/ws-logo.svg" alt="World Shading" width={68} height={36} priority className="h-9 w-auto" />
+        </div>
         <div className="space-y-1">
           <h1 className="text-3xl font-semibold tracking-tight text-gray-900 text-balance dark:text-white">{title}</h1>
           <p className="max-w-sm text-sm leading-6 text-gray-500 dark:text-zinc-400">{subtitle}</p>

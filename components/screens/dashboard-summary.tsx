@@ -1,7 +1,7 @@
 ﻿"use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Crown, Gift, Sparkles, WalletCards } from "lucide-react";
+import { Crown, Gift, Sparkles, WalletCards } from "lucide-react";
 import { GlassCard } from "@/components/ui/glass-card";
 import { MembershipCard } from "@/components/ui/membership-card";
 import { ProgressBar } from "@/components/ui/progress-bar";
@@ -40,9 +40,6 @@ export function DashboardSummary({ data }: { data: CustomerOverview }) {
             <p className="text-xs uppercase tracking-[0.26em] text-gray-400 dark:text-white/45">Total sales</p>
             <p className="text-2xl font-semibold tracking-[-0.03em] text-gray-900 dark:text-white">{data.totalSales} BHD</p>
           </div>
-          <div className="mt-4 border-t border-gray-200/90 pt-4 dark:border-white/10">
-            <p className="text-xs uppercase tracking-[0.24em] text-gold/90">ERPNext verified</p>
-          </div>
         </GlassCard>
       </div>
 
@@ -65,19 +62,16 @@ export function DashboardSummary({ data }: { data: CustomerOverview }) {
             <Sparkles className="h-5 w-5" />
           </div>
           <div className="min-w-0 flex-1">
-            <div className="flex items-start justify-between gap-3">
-              <div className="min-w-0 flex-1">
-                <p className="text-xs uppercase tracking-[0.26em] text-gray-400 dark:text-white/45">Next benefit unlocks</p>
-                <div className="mt-3 space-y-3">
-                  {data.nextUnlock.map((unlock) => (
-                    <div key={unlock.star} className="flex items-center justify-between gap-3 rounded-[1.2rem] border border-gray-200/90 bg-white/70 px-4 py-3 dark:border-white/10 dark:bg-white/[0.03]">
-                      <p className="text-sm font-medium text-gray-900 dark:text-white">Star {unlock.star}</p>
-                      <p className="text-sm font-semibold text-gold">{unlock.discount}% discount</p>
-                    </div>
-                  ))}
+            <p className="text-xs uppercase tracking-[0.26em] text-gray-400 dark:text-white/45">Next benefit unlocks</p>
+            <div className="mt-3 space-y-3">
+              {data.nextUnlock.map((unlock) => (
+                <div key={unlock.star} className="flex items-center justify-between gap-3 rounded-[1.2rem] border border-gray-200/90 bg-white/70 px-4 py-3 dark:border-white/10 dark:bg-white/[0.03]">
+                  <div className="flex items-center gap-3">
+                    <StarRating value={unlock.star} total={5} size="sm" />
+                    <p className="text-sm font-medium text-gray-900 dark:text-white">{unlock.discount}% discount</p>
+                  </div>
                 </div>
-              </div>
-              <ArrowUpRight className="mt-1 h-4 w-4 shrink-0 text-gold" />
+              ))}
             </div>
           </div>
         </div>
@@ -94,7 +88,7 @@ export function DashboardSummary({ data }: { data: CustomerOverview }) {
           </div>
           <ProgressBar value={data.progressCurrent} max={data.progressTarget} />
           <p className="text-sm leading-6 text-gray-500 dark:text-zinc-400">
-            Continue spending to unlock your next benefit and move closer to {data.nextTierName} membership.
+            Continue spending to unlock your next benefit and move closer to your next membership milestone.
           </p>
         </div>
       </GlassCard>
